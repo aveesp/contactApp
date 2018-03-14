@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body::after {
+    content: "";
+    background: url(assets/images/pexels-photo-261628.jpeg) no-repeat;
+    background-size: cover;
+    opacity: 0.05;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+header{margin-bottom: 40px;}
+input.ng-invalid.ng-dirty{
+    border: solid 1px rgb(255, 0, 0);
+    box-shadow: 0 0 10px rgba(255,0,0,0.1);
+}
+button:hover,a.btn:hover{
+    cursor: pointer;
+}

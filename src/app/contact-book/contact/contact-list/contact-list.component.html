@@ -1,0 +1,43 @@
+<h6 class="text-left">Employee Register</h6>
+<table class="table table-bordered table-striped text-center">
+  <tr>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
+    <td>Phone</td>
+    <td>Status</td>
+    <td>Actions</td>
+  </tr>
+  <tr *ngFor="let cnt of contactList">
+    <td>{{cnt.firstname}}</td>
+    <td>{{cnt.lastname}}</td>
+    <td>{{cnt.email}}</td>
+    <td>{{cnt.phone}}</td>
+    <td>{{cnt.status}}</td>
+    <td>
+      <a class="btn actionBtn btn-success text-white" (click)="updateContact(cnt)">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a class="btn actionBtn btn-danger text-white">
+        <i class="fa fa-trash-o" (click)="showPopup(cnt, cnt.$key)"></i>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+<div id="deletPopupoverlay" [class.show]="showBtn" class="step" *ngIf="showBtn">
+    <div class="innerCnt">
+      <div class="card">
+          <div class="inner-card card-body">
+            <button class="btn btn-sm closeBtn" (click)=cancel()>
+              <i class="fa fa-close"></i>
+            </button>
+            <h5 class="card-title text-center">Are you sure you want to delete,<br> <b>{{this.contactService.currentContact.firstname}} {{this.contactService.currentContact.lastname}}?</b></h5>
+            <hr/>
+            <button class="listBtn btn btn-sm btn-primary pull-left" (click)=deleteContact(this.contactService.currentContact.$key)>Yes</button>
+            <button class="listBtn btn btn-sm btn-warning pull-right" (click)=cancel()>No</button>
+          </div>
+      </div>
+    </div>
+  </div>

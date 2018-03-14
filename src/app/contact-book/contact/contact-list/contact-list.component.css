@@ -1,0 +1,61 @@
+#deletPopupoverlay{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    transition-property: all;
+    transition-duration: 1s,1s,1s,1s,1s,1s;
+}
+
+.innerCnt{
+    position: relative;
+    height: 300px;
+    margin: -150px auto 0;
+    top: 50%;
+    width: 40%;
+    max-width: 400px;
+}
+#deletPopupoverlay .inner-card{
+    padding: 10px 15px;
+}
+#deletPopupoverlay .inner-card .title{
+    font-size:  14px;
+    font-weight: normal;
+    color: #333333;
+    padding-bottom: 30px;
+    border-bottom: solid 1px #ccc;
+}
+.closeBtn{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    border: solid 1px #eee;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.4);
+    color: #ff0000;
+    font-size: 16px;
+    line-height: normal;
+}
+#deletPopupoverlay.show{
+    opacity: 1 !important;
+}
+#deletPopupoverlay.step{
+    opacity: 0;
+    transition: .5s ease-in-out all;
+}
+.listBtn{
+    display: inline;
+    width: 40%;
+    max-width: 120px;
+}
+.actionBtn{
+    padding: 0 5px;
+    margin-left: 10px;
+}
